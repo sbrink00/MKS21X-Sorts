@@ -1,10 +1,9 @@
 public class sort{
   public static void main(String[]args){
-    int[] test = new int[]{-10, 11, 2, 5, 7, 4, 3, 54522, 7565334, -2, -7, -5};
+    int[] test = new int[]{-9, 5, 687, 4, -23245, -434379797, 90048349, 5 ,6 ,3, 7};
     System.out.println(toString(test));
-    swap(test, 1, 4);
+    selectionsort(test);
     System.out.println(toString(test));
-    //System.out.println(selectionsort(test));
   }
 
   public static String toString(int[] ary){
@@ -12,7 +11,7 @@ public class sort{
     for (int idx = 0; idx < ary.length; idx ++){
       output += ary[idx] + ", ";
     }
-    return output.substring(0, output.length() - 2);
+    return output.substring(0, output.length() - 2) + "]";
   }
 
   public static void swap(int[] ary, int index1,  int index2){
@@ -21,11 +20,16 @@ public class sort{
     ary[index2] = temp;
   }
 
-  /*public static void selectionsort(int[] ary){
-    int min;
+  public static void selectionsort(int[] ary){
     for (int idx = 0; idx < ary.length; idx ++){
-      min = ary[]
+      int index = idx;
+      for (int idx2 = idx; idx2 < ary.length; idx2 ++){
+        int temp = ary[idx2];
+        if (temp < ary[index]) index = idx2;
+      }
+      swap(ary, idx, index);
     }
-  }*/
+  }
+
 
 }
