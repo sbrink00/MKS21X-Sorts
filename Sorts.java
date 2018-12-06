@@ -1,8 +1,8 @@
-public class sort{
+public class Sorts{
   public static void main(String[]args){
     int[] test = new int[]{-9, 5, 687, 4, -23245, -434379797, 90048349, 5 ,6 ,3, 7};
     System.out.println(toString(test));
-    selectionsort(test);
+    selectionSort(test);
     System.out.println(toString(test));
   }
 
@@ -20,7 +20,7 @@ public class sort{
     ary[index2] = temp;
   }
 
-  public static void selectionsort(int[] ary){
+  public static void selectionSort(int[] ary){
     for (int idx = 0; idx < ary.length; idx ++){
       int index = idx;
       for (int idx2 = idx; idx2 < ary.length; idx2 ++){
