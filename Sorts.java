@@ -1,8 +1,9 @@
+import java.lang.Math;
 public class Sorts{
   public static void main(String[]args){
     int[] test = new int[]{-9, 5, 687, 4, -23245, -434379797, 90048349, 5 ,6 ,3, 7};
     System.out.println(toString(test));
-    selectionSort(test);
+    bubbleSort(test);
     System.out.println(toString(test));
   }
 
@@ -31,5 +32,19 @@ public class Sorts{
     }
   }
 
+  public static void bubbleSort(int[] ary){
+    boolean sorted = false;
+    int val = 1;
+    while (!sorted){
+      sorted = true;
+      for (int idx = 0; idx < ary.length - val; idx ++){
+        if (ary[idx] > ary[idx + 1]){
+          swap(ary, idx, idx + 1);
+          sorted = false;
+        }
+      }
+      val++;
+    }
+  }
 
 }
