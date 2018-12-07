@@ -1,10 +1,15 @@
 import java.lang.Math;
 public class Sorts{
   public static void main(String[]args){
-    int[] test = new int[]{-9, 5, 687, 4, -23245, -434379797, 90048349, 5 ,6 ,3, 7};
-    System.out.println(toString(test));
-    bubbleSort(test);
-    System.out.println(toString(test));
+    //int[] test = new int[]{-9, 5, 687, 4, -23245, -434379797, 90048349, 5 ,6 ,3, 7};
+    //System.out.println(toString(test));
+    //bubbleSort(test);
+    //System.out.println(toString(test));
+    int[] selection = new int[80000];
+    for (int idx = 0; idx < 80000; idx ++){
+      selection[idx] = Math.random() * 100;
+    }
+    System.out.println(toString(selection));
   }
 
   public static String toString(int[] ary){
