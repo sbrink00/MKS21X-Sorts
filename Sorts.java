@@ -1,30 +1,17 @@
 import java.util.Random;
 public class Sorts{
   public static void main(String[]args){
-    int[] test = new int[]{-9, 5, 687, 4, -23245, -434379797, 90048349, 5 ,6 ,3, 7};
-    System.out.println(toString(test));
-    bubbleSort(test);
-    System.out.println(toString(test));
-    /*int[] selection = new int[100];
-    for (int idx = 0; idx < 100; idx ++){
-      int temp = (int)(Math.random()) * 100;
-      System.out.println(temp);
+    //int[] test = new int[]{-9, 5, 687, 4, -23245, -434379797, 90048349, 5 ,6 ,3, 7};
+    //System.out.println(toString(test));
+    //bubbleSort(test);
+    //System.out.println(toString(test));
+    Random r = new Random();
+    int[] ary = new int[80000];
+    for (int idx = 0; idx < 80000; idx ++){
+      int temp = r.nextInt() % 1000000;
+      ary[idx] = temp;
     }
-    System.out.println(toString(selection));*/
-  }
-
-  public static String toString(int[] ary){
-    String output = "[";
-    for (int idx = 0; idx < ary.length; idx ++){
-      output += ary[idx] + ", ";
-    }
-    return output.substring(0, output.length() - 2) + "]";
-  }
-
-  public static void swap(int[] ary, int index1,  int index2){
-    int temp = ary[index1];
-    ary[index1] = ary[index2];
-    ary[index2] = temp;
+    bubbleSort(ary);
   }
 
   public static void selectionSort(int[] ary){
@@ -53,4 +40,17 @@ public class Sorts{
     }
   }
 
+  public static String toString(int[] ary){
+    String output = "[";
+    for (int idx = 0; idx < ary.length; idx ++){
+      output += ary[idx] + ", ";
+    }
+    return output.substring(0, output.length() - 2) + "]";
+  }
+
+  public static void swap(int[] ary, int index1,  int index2){
+    int temp = ary[index1];
+    ary[index1] = ary[index2];
+    ary[index2] = temp;
+  }
 }
