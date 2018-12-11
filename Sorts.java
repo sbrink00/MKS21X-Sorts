@@ -6,8 +6,9 @@ public class Sorts{
     //bubbleSort(test);
     //System.out.println(toString(test));
     Random r = new Random();
-    int[] ary = new int[80000];
-    for (int idx = 0; idx < 80000; idx ++){
+    int limit = 10000;
+    int[] ary = new int[limit];
+    for (int idx = 0; idx < limit; idx ++){
       int temp = r.nextInt() % 1000000;
       ary[idx] = temp;
     }
