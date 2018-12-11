@@ -1,19 +1,40 @@
 import java.util.Random;
 public class Sorts{
   public static void main(String[]args){
-    int[] test = new int[]{1, 2, 3, 4, 5};
-    insertionSort(test);
-    //System.out.println(toString(test));
-    //bubbleSort(test);
-    //System.out.println(toString(test));
-    /*Random r = new Random();
-    int limit = 10000;
-    int[] ary = new int[limit];
-    for (int idx = 0; idx < limit; idx ++){
-      int temp = r.nextInt() % 1000000;
-      ary[idx] = temp;
+    int size = Integer.parseInt(args[0]);
+    Random r = new Random();
+    int[] test = new int[size];
+    for (int idx = 0; idx < size; idx ++){
+      int temp = r.nextInt() % 100000;
+      test[idx] = temp;
     }
-    bubbleSort(ary);*/
+    if (args[1].equals("selection")) selectionSort(test);
+    else if (args[1].equals("bubble")) bubbleSort(test);
+    else if (args[1].equals("insertion")) insertionSort(test);
+    else if (args[1].equals("check")) System.out.println(checkAgainstSelection());
+    else if (args[1].equals("million")) sortMillion();
+    else System.out.println("choose a sort dumbass");
+  }
+
+  public static boolean checkAgainstSelection(){
+    Random r = new Random();
+    int[] test = new int[100000];
+    for (int idx = 0; idx < 100000; idx ++){
+      int temp = r.nextInt() % 100000;
+      test[idx] = temp;
+    }
+    int[] copyTest = test;
+    selectionSort(test);
+    insertionSort(copyTest);
+    for (int idx = 0; idx < test.length; idx ++){
+      if (test[idx] != copyTest[idx]) return false;
+    }
+    return true;
+  }
+
+  public static void sortMillion(){
+    int[] ary = new int[1000000];
+    bubbleSort(ary);
   }
 
   public static void insertionSort(int[] ary){
@@ -23,9 +44,7 @@ public class Sorts{
       for (;i > 0 && ary[i] > val; i--){
         ary[i + 1] = ary[i];
       }
-      System.out.println(val);
       ary[i + 1] = val;
-      System.out.println(toString(ary));
     }
   }
 
