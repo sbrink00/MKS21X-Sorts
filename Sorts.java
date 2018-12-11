@@ -1,27 +1,30 @@
 import java.util.Random;
 public class Sorts{
   public static void main(String[]args){
-    int[] test = new int[]{-9, 5, 687, 4, -23245, -434379797, 90048349, 5 ,6 ,3, 7};
+    int[] test = new int[]{1, 2, 3, 4, 5};
+    insertionSort(test);
     //System.out.println(toString(test));
     //bubbleSort(test);
     //System.out.println(toString(test));
-    Random r = new Random();
+    /*Random r = new Random();
     int limit = 10000;
     int[] ary = new int[limit];
     for (int idx = 0; idx < limit; idx ++){
       int temp = r.nextInt() % 1000000;
       ary[idx] = temp;
     }
-    bubbleSort(ary);
+    bubbleSort(ary);*/
   }
 
   public static void insertionSort(int[] ary){
     for (int idx = 1; idx < ary.length; idx ++){
       int val = ary[idx];
-      for (int i = idx - 1; ary[i] <= val; i--){
+      int i = idx - 1;
+      for (;i > 0 && ary[i] > val; i--){
         ary[i + 1] = ary[i];
       }
-      ary[i] = val;
+      System.out.println(val);
+      ary[i + 1] = val;
       System.out.println(toString(ary));
     }
   }
