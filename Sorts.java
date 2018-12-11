@@ -1,7 +1,7 @@
 import java.util.Random;
 public class Sorts{
   public static void main(String[]args){
-    //int[] test = new int[]{-9, 5, 687, 4, -23245, -434379797, 90048349, 5 ,6 ,3, 7};
+    int[] test = new int[]{-9, 5, 687, 4, -23245, -434379797, 90048349, 5 ,6 ,3, 7};
     //System.out.println(toString(test));
     //bubbleSort(test);
     //System.out.println(toString(test));
@@ -13,6 +13,17 @@ public class Sorts{
       ary[idx] = temp;
     }
     bubbleSort(ary);
+  }
+
+  public static void insertionSort(int[] ary){
+    for (int idx = 1; idx < ary.length; idx ++){
+      int val = ary[idx];
+      for (int i = idx - 1; ary[i] <= val; i--){
+        ary[i + 1] = ary[i];
+      }
+      ary[i] = val;
+      System.out.println(toString(ary));
+    }
   }
 
   public static void selectionSort(int[] ary){
