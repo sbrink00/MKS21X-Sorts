@@ -1,6 +1,7 @@
 import java.util.Random;
 public class Sorts{
   public static void main(String[]args){
+    //
     int size = Integer.parseInt(args[0]);
     Random r = new Random();
     int[] test = new int[size];
